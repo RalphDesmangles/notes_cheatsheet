@@ -155,6 +155,14 @@ Protocol Statistics:
 tshark -qz io,phs -r initial.cap
 ```
 
+```bash
+# Grab your subnet (eth0)
+ip a
+
+# Identify Gateway
+route -n
+```
+
 Nmap scan your local subnet to create a list of host to spoof.
 ```bash
 nmap -sP -oG - -v -n SUBNET --exclude MYIP,ROUTERIPS | grep 'Status: Up' | cut -d' ' -f2 > mysubnethosts.txt
